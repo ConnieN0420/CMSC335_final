@@ -19,7 +19,7 @@ const {MongoClient, ServerApiVersion} = require('mongodb');
 
 
 //////////GET RID OF ONCE HOST ON ANOTHER SERVER
-const portNumber = process.env.PORT || 5001;
+//const portNumber = 5001;
 
 
 
@@ -304,4 +304,4 @@ app.post('/artist', async (request, response) => {
 
 
 
-app.listen(portNumber);
+//app.listen(portNumber);
