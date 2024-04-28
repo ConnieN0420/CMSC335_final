@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Spotify Search</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+</head>
+
+<body>
+	<h1>Spotify Your Favorite Music</h1>
+
+	Search for track <a href="/track">Tracks</a><br><br>
+	Search for artist <a href="/artist">Artists</a><br><br>
+	Search for album <a href="/album">Albums</a><br><br>
+
+	<h2>Recent Searches:</h2>
+    <ul>
+        <% recentSearches.forEach(search => { %>
+            <li><%= search.type %>: <%= search.query %></li>
+        <% }); %>
+    </ul>
+
+	<form action="/" method="POST">
+        <button type="submit">Clear Search History</button>
+    </form>
+
+</body>
+
+</html>
