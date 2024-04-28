@@ -9,23 +9,32 @@
 </head>
 
 <body>
-	<h1>Spotify Your Favorite Music</h1>
+    <div class="first-page">
+        <h1>Spotify Your Favorite Music</h1>
 
-	Search for track <a href="/track">Tracks</a><br><br>
-	Search for artist <a href="/artist">Artists</a><br><br>
-	Search for album <a href="/album">Albums</a><br><br>
+        <div class="track-search">
+            Search for track <a href="/track">Tracks</a><br><br>
+        </div>
+        <div class="artist-search">
+            Search for artist <a href="/artist">Artists</a><br><br>
+        </div>
+        <div class ="album-search">
+            Search for album <a href="/album">Albums</a><br><br>
+        </div>
 
-	<h2>Recent Searches:</h2>
-    <ul>
-        <% recentSearches.forEach(search => { %>
-            <li><%= search.type %>: <%= search.query %></li>
-        <% }); %>
-    </ul>
+        <div class="recent-searches">
+            <h2>Recent Searches:</h2>
+            <ul>
+                <% recentSearches.forEach(search => { %>
+                    <li><%= search.type %>: <%= search.query %></li>
+                <% }); %>
+            </ul>
 
-	<form action="/" method="POST">
-        <button type="submit">Clear Search History</button>
-    </form>
-
+        </div>
+        <form action="/" method="POST">
+            <button type="submit">Clear Search History</button>
+        </form>
+    </div>
 </body>
 
 </html>

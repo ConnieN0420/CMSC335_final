@@ -41,4 +41,57 @@
     margin-left: 20px;
 }
 
+.first-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+
+.track-search,
+.artist-search,
+.album-search {
+    margin-bottom: 20px;
+}
+
+.track-search a,
+.artist-search a,
+.album-search a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.track-search a:hover,
+.artist-search a:hover,
+.album-search a:hover {
+    text-decoration: underline;
+}
+
+.recent-searches {
+    margin-top: 30px;
+}
+
+.recent-searches ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-searches li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
