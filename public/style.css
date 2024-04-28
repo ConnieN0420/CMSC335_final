@@ -68,6 +68,7 @@
 .artist-search a:hover,
 .album-search a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .recent-searches {
