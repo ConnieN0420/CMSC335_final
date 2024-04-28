@@ -68,7 +68,7 @@ app.post('/', async (request, response) => {
 
 
 //Rendering the page for track search and results
-app.get('/track', async (request, response) => {
+app.get('https://cmsc335-final-wiby.onrender.com/track', async (request, response) => {
     response.render('track'); 
 });
 
