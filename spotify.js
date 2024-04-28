@@ -27,7 +27,7 @@ const {MongoClient, ServerApiVersion} = require('mongodb');
 
 
 async function getRecentSearchesFromDatabase() {
-  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+  const client = new MongoClient(uri, { useNewUrlParser: true, serverApi: ServerApiVersion.v1 });
   try {
       await client.connect();
       const recentSearches = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find().sort({ _id: -1 }).limit(10).toArray();
@@ -54,7 +54,7 @@ app.get('/', async (request, response) => {
 
 //clear search history 
 app.post('/', async (request, response) => {
-  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(uri, { useNewUrlParser: true, serverApi: ServerApiVersion.v1 });
   try {
     const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).deleteMany({});
     await client.close();    
@@ -93,7 +93,7 @@ app.post('/track', async (request, response) => {
         }
       };
 
-      const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+      const client = new MongoClient(uri, { useNewUrlParser: true, serverApi: ServerApiVersion.v1 });
       try {
           await client.connect();
           const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne({ 'type': 'tracks', 'query': trackSearch });
@@ -156,7 +156,7 @@ app.post('/album', async (request, response) => {
         }
       };
 
-      const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+      const client = new MongoClient(uri, { useNewUrlParser: true, serverApi: ServerApiVersion.v1 });
       try {
           await client.connect();
           const result = await client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).insertOne({ 'type': 'album', 'query': albumSearch });
